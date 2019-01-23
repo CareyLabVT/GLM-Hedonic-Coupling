@@ -1,4 +1,14 @@
-# Load packages ####
+#### Load packages ####
+# If you don't have GLM 2.2.0, run installation lines below. If already installed,
+# skip to line 12
+
+#install.packages('sp')
+#install.packages('devtools') 
+#library(sp) 
+#library(devtools)
+#devtools::install_github("CareyLabVT/GLMr", force = TRUE) # version 2.2.0rc5
+#devtools::install_github("CareyLabVT/glmtools", force = TRUE) 
+
 pacman::p_load(cowplot, GLMr, glmtools, tidyverse, lubridate)
 
 sim_folder <- './Hedonic_sims'
