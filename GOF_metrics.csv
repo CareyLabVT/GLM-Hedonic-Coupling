@@ -1,0 +1,29 @@
+Metric,period,n,R2,RMSE,rho,NMAE
+Stage,cal,1077,0.11,0.68,0.28,0.03
+Stage,val,383,0.02,0.7,0.14,0.03
+Secchi,cal,154,0.31,2.04,0.58,0.38
+Secchi,val,43,0.2,2.1,0.5,0.47
+Manual Temp Daily Max 0-24m,cal,154,0.97,1.51,0.98,0.07
+Manual Temp Daily Max 0-24m,val,45,0.98,1.23,0.98,0.06
+Manual Temp Daily Max 0-2m,cal,154,0.97,1.52,0.98,0.07
+Manual Temp Daily Max 0-2m,val,45,0.98,1.22,0.98,0.06
+Buoy Daily Max. Temp 0-20m,cal,770,0.97,1.23,0.97,0.05
+Buoy Daily Max. Temp 0-20m,val,562,0.96,1.35,0.97,0.05
+Buoy Daily Max. Temp 0-2m,cal,770,0.97,1.25,0.97,0.05
+Buoy Daily Max. Temp 0-2m,val,562,0.95,1.39,0.97,0.05
+Manual DO Daily Mean 0-25m,cal,153,0.58,4.33,0.78,0.47
+Manual DO Daily Mean 0-25m,val,45,0.67,4.7,0.81,0.56
+Manual DO Daily Mean 0-2m,cal,153,0,3.71,0.13,0.28
+Manual DO Daily Mean 0-2m,val,45,0.01,3.36,0.32,0.25
+Buoy DO Daily Mean 0.5m,cal,664,0.18,3.59,0.54,0.27
+Buoy DO Daily Mean 0.5m,val,526,0.16,3.37,0.41,0.29
+Manual Chl-a 0-12m,cal,194,0.39,56.63,0.62,8.21
+Manual Chl-a 0-12m,val,78,0.46,53.46,0.63,7.31
+Manual Chl-a 0-4m,cal,83,0.38,70.57,0.56,7.29
+Manual Chl-a 0-4m,val,35,0.4,68.9,0.51,8.03
+Manual Mean Summer Chl-a 0-4m,cal,7,0.54,68.24,0.64,7.47
+Manual Mean Summer Chl-a 0-4m,val,3,0.25,67.98,0.5,8.9
+Buoy Chl-a 0.5m,cal,771,0.04,2411.57,0.28,0.95
+Buoy Chl-a 0.5m,val,562,0.03,1408.07,0.04,0.95
+Buoy Mean Summer Chl-a 0.5m,cal,5,0.83,1676.77,0.9,0.92
+Buoy Mean Summer Chl-a 0.5m,val,3,0.75,1029.94,1,0.91

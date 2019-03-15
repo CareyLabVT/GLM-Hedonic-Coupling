@@ -73,23 +73,6 @@ chlaPlot <- ggplot(data=subset(dataLong, variable=='Chla'& year >2007), aes(x= D
 
 plot_grid(secchiPlot, chlaPlot, ncol=1, align='hv', labels=c("A","B")) # Figure 3 in Hedonic
 
-# Time series plots: Extreme max/min and baseline scenarios only ####
-a <- ggplot(data=subset(dataLong, variable=='Secchi' & (sim=='0'|sim=='1'|sim=='2')), aes(x= DateTime, y = value, fill=sim, group=sim, colour=sim)) +
-  geom_line(lwd=1.05) + mytheme + 
-  scale_colour_manual("Scenario",values=jet.colors(3)) + # use with as.factor
-  scale_y_continuous("Secchi (m)", limits=c(0,12), breaks=seq(0,12,2)) +
-  scale_x_datetime(date_breaks="1 year", date_labels=" ") +
-  theme(axis.text.x = element_blank(), axis.title.x=element_blank(), legend.position='top')
-
-b <- ggplot(data=subset(dataLong, variable=='Chla' & (sim=='0'|sim=='1'|sim=='2')), aes(x= DateTime, y = value, fill=sim, group=sim, colour=sim)) +
-  geom_line(lwd=1.05) + mytheme + 
-  scale_colour_manual(values=jet.colors(3)) +
-  scale_y_continuous("Surface chl-a (ug/L)", limits=c(0,200)) +
-  scale_x_datetime(date_breaks="1 year", date_labels="%b-%Y")+ 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1), axis.title.x=element_blank(), legend.position="none")
-
-plot_grid(a,b, align='hv', ncol=1, axis="l")
-
 #### Summer (Jun-Aug) only ####
 summerLong <- dataLong %>% mutate(month = month(DateTime), day = day(DateTime), 
                                   Jday = yday(DateTime)) %>%
@@ -172,3 +155,10 @@ summerChla <- ggplot(subset(summerLong, variable =="Chla"), aes(x= sim2, y = val
         plot.margin = unit(c(0, 0, 0, 0), "cm"))
 
 plot_grid(summerSecchi, summerChla, ncol=1, axis="l", labels=c("A","B"), align= 'hv') # Figure 1 in Hedonic
+
+# Summer chla/Secchi correlation ####
+summer_correlation <- summerLong %>% filter(sim==1) %>%
+  select(variable, value, year:day) %>%
+  spread(variable, value)
+
+cor.test(summer_correlation$Chla, summer_correlation$Secchi, method = 'spearman')
